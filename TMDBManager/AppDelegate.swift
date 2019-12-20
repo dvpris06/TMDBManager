@@ -10,10 +10,20 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var keys: NSDictionary?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        if let path = Bundle.main.path(forResource: "keys", ofType: "plist") {
+            keys = NSDictionary(contentsOfFile: path)
+        }
+        
+        if let dict = keys {
+            let apiKey = dict["apiKey"] as! String
+            TMDBClient.setAPIKey(apiKey)
+        }
+        
         return true
     }
 

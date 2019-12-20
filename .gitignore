@@ -96,3 +96,7 @@ iOSInjectionProject/
 
 ### Xcode Patch ###
 **/xcshareddata/WorkspaceSettings.xcsettings
+
+# Ignore file with secret keys
+
+keys.plist
