@@ -9,6 +9,8 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
+    //MARK: Outlets and Properties
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
@@ -18,6 +20,8 @@ class SearchViewController: UIViewController {
     
     var currentSearchTask: URLSessionDataTask?
         
+    //MARK: VC lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,11 +31,7 @@ class SearchViewController: UIViewController {
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = false
-    }
-    
+    //MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             let detailVC = segue.destination as! MovieDetailViewController
@@ -42,6 +42,8 @@ class SearchViewController: UIViewController {
     
 
 }
+
+    //MARK: UISearchBarDelegate Methods
 
 extension SearchViewController: UISearchBarDelegate {
     
@@ -68,6 +70,8 @@ extension SearchViewController: UISearchBarDelegate {
     }
     
 }
+
+    //MARK: TableView Methods
 
 extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     

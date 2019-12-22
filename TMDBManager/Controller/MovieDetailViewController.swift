@@ -27,7 +27,6 @@ class MovieDetailViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = movie.title
-        self.tabBarController?.tabBar.isHidden = true
         
         toggleBarButton(watchlistBarButtonItem, enabled: isWatchlist)
         toggleBarButton(favoriteBarButtonItem, enabled: isFavorite)

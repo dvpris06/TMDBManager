@@ -9,9 +9,13 @@ import UIKit
 
 class WatchlistViewController: UIViewController {
 
+    //MARK: Outlets and Properties
+    
     @IBOutlet weak var tableView: UITableView!
     
     var selectedIndex = 0
+    
+    //MARK: VC lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +31,11 @@ class WatchlistViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        self.tabBarController?.tabBar.isHidden = false
+     
         tableView.reloadData()
     }
+    
+    //MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
@@ -41,6 +46,8 @@ class WatchlistViewController: UIViewController {
     
 
 }
+
+    //MARK: TableView Methods
 
 extension WatchlistViewController: UITableViewDataSource, UITableViewDelegate {
     

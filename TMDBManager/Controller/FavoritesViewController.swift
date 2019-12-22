@@ -9,9 +9,13 @@ import UIKit
 
 class FavoritesViewController: UIViewController {
 
+    //MARK: Outlets and Properties
+    
     @IBOutlet weak var tableView: UITableView!
     
     var selectedIndex = 0
+    
+    //MARK: VC lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +31,11 @@ class FavoritesViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        self.tabBarController?.tabBar.isHidden = false
+       
         tableView.reloadData()
     }
+    
+    //MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
@@ -40,6 +45,8 @@ class FavoritesViewController: UIViewController {
     }
 
 }
+
+    //MARK: TableView Methods
 
 extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
     
