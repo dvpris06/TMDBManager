@@ -9,7 +9,8 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var loginViaWebsite: UIButton!
@@ -27,7 +28,17 @@ class LoginViewController: UIViewController {
     func handleTokenResponse(success: Bool, error: Error?) {
         if success {
             print(TMDBClient.Auth.requestToken)
+            DispatchQueue.main.async {
+                TMDBClient.login(username: self.usernameTextField.text ?? "", password: self.passwordTextField.text ?? "", completion: self.handleLoginResponse(success:error:))
+            }
+            
         } 
+    }
+    
+    func handleLoginResponse(success: Bool, error: Error?) {
+        if success {
+            print(TMDBClient.Auth.requestToken)
+        }
     }
 
 }
