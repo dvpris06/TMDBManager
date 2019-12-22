@@ -19,7 +19,6 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print(TMDBClient.apiKey)
     }
 
     //MARK: Actions
@@ -51,7 +50,7 @@ class LoginViewController: UIViewController {
     
     func handleSessionResponse(success: Bool, error: Error?) {
         if success {
-            print(TMDBClient.Auth.sessionID)
+            performSegue(withIdentifier: "completeLogin", sender: nil)
         }
     }
 
