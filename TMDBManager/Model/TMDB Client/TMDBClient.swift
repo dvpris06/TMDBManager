@@ -28,6 +28,8 @@ class TMDBClient {
         case createSessionID
         case login
         case webAuth
+        case search(String)
+        case posterImage(String)
         
         var stringValue: String {
             switch self {
@@ -40,8 +42,14 @@ class TMDBClient {
             case .login:
                 return Endpoints.base + "/authentication/token/validate_with_login" + Endpoints.apiKeyParam
             
-                case .webAuth:
+            case .webAuth:
                 return "https://www.themoviedb.org/authenticate/\(Auth.requestToken)?redirect_to=themoviemanager:authenticate"
+                
+            case .search(let query):
+                return Endpoints.base + "/search/movie" + Endpoints.apiKeyParam + "&query=\(query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""))"
+                
+            case .posterImage(let posterPath):
+                return "https://image.tmdb.org/t/p/w500/" + posterPath
             }
         }
         
@@ -93,6 +101,17 @@ class TMDBClient {
                 completion(false, error)
             }
         }
+    }
+    
+    class func search(query: String, completion: @escaping ([Movie], Error?) -> Void) -> URLSessionDataTask {
+        let task = taskForGETRequest(url: Endpoints.search(query).url, responseType: MovieResults.self) { response, error in
+            if let response = response {
+                completion(response.results, nil)
+            } else {
+                completion([], error)
+            }
+        }
+        return task
     }
     
     //MARK: POST Requests
@@ -154,5 +173,15 @@ class TMDBClient {
                 completion(false, nil)
             }
         }
+    }
+    
+    //MARK: Other Requests
+    class func downloadPosterImage(path: String, completion: @escaping (Data?, Error?) -> Void) {
+        let task = URLSession.shared.dataTask(with: Endpoints.posterImage(path).url) { data, response, error in
+            DispatchQueue.main.async {
+                completion(data, error)
+            }
+        }
+        task.resume()
     }
 }
