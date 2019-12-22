@@ -38,6 +38,13 @@ class LoginViewController: UIViewController {
     func handleLoginResponse(success: Bool, error: Error?) {
         if success {
             print(TMDBClient.Auth.requestToken)
+            TMDBClient.createSessionID(completion: handleSessionResponse(success:error:))
+        }
+    }
+    
+    func handleSessionResponse(success: Bool, error: Error?) {
+        if success {
+            print(TMDBClient.Auth.sessionID)
         }
     }
 

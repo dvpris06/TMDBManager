@@ -10,6 +10,8 @@
 		7C6DE2BA23AD0BA700E082BD /* TMDBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6DE2B923AD0BA700E082BD /* TMDBClient.swift */; };
 		7C6DE2C123AFA3A000E082BD /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6DE2C023AFA3A000E082BD /* TokenResponse.swift */; };
 		7C6DE2C723AFA87200E082BD /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6DE2C623AFA87200E082BD /* LoginRequest.swift */; };
+		7C6DE2C923AFB3C700E082BD /* PostSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6DE2C823AFB3C700E082BD /* PostSession.swift */; };
+		7C6DE2CB23AFB3EB00E082BD /* SessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6DE2CA23AFB3EB00E082BD /* SessionResponse.swift */; };
 		7C76C65D23ACEC17007AA56B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C76C65C23ACEC17007AA56B /* AppDelegate.swift */; };
 		7C76C65F23ACEC17007AA56B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C76C65E23ACEC17007AA56B /* SceneDelegate.swift */; };
 		7C76C66123ACEC17007AA56B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C76C66023ACEC17007AA56B /* LoginViewController.swift */; };
@@ -23,6 +25,8 @@
 		7C6DE2B923AD0BA700E082BD /* TMDBClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBClient.swift; sourceTree = "<group>"; };
 		7C6DE2C023AFA3A000E082BD /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
 		7C6DE2C623AFA87200E082BD /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		7C6DE2C823AFB3C700E082BD /* PostSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSession.swift; sourceTree = "<group>"; };
+		7C6DE2CA23AFB3EB00E082BD /* SessionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionResponse.swift; sourceTree = "<group>"; };
 		7C76C65923ACEC17007AA56B /* TMDBManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDBManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C76C65C23ACEC17007AA56B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C76C65E23ACEC17007AA56B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				7C6DE2C623AFA87200E082BD /* LoginRequest.swift */,
+				7C6DE2C823AFB3C700E082BD /* PostSession.swift */,
 			);
 			path = "TMDB Requests";
 			sourceTree = "<group>";
@@ -93,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				7C6DE2C023AFA3A000E082BD /* TokenResponse.swift */,
+				7C6DE2CA23AFB3EB00E082BD /* SessionResponse.swift */,
 			);
 			path = "TMDB Responses";
 			sourceTree = "<group>";
@@ -201,8 +207,10 @@
 				7C76C66123ACEC17007AA56B /* LoginViewController.swift in Sources */,
 				7C6DE2BA23AD0BA700E082BD /* TMDBClient.swift in Sources */,
 				7C76C65D23ACEC17007AA56B /* AppDelegate.swift in Sources */,
+				7C6DE2CB23AFB3EB00E082BD /* SessionResponse.swift in Sources */,
 				7C76C65F23ACEC17007AA56B /* SceneDelegate.swift in Sources */,
 				7C6DE2C123AFA3A000E082BD /* TokenResponse.swift in Sources */,
+				7C6DE2C923AFB3C700E082BD /* PostSession.swift in Sources */,
 				7C6DE2C723AFA87200E082BD /* LoginRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
