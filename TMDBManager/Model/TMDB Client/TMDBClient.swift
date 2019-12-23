@@ -14,7 +14,7 @@ class TMDBClient {
         TMDBClient.apiKey = key
     }
     
-    struct Auth {
+    private struct Auth {
         static var accountId = 0
         static var requestToken = ""
         static var sessionID = ""
@@ -81,6 +81,7 @@ class TMDBClient {
     }
     
     //MARK: Get Requests
+    
      @discardableResult class func taskForGETRequest<ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionDataTask {
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else {
